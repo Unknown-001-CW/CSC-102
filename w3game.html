@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W3 Game</title>
+    <script>
+        // create a function to run our game
+        function playGame(){
+            // we are going to narrate what is going on in this function in the console
+            console.log("playGame function was called");
+
+            // roll a die by calling the rollDie function
+            var die1 = rollDie();
+            console.log("the first die roll is: " + die1);
+
+            // roll a die by calling the rollDie function
+            var die2 = rollDie();
+            console.log("the second die roll is: " + die2);
+
+            // add the dice rolls together
+            var sum = die1 + die2;
+            console.log("the sum is: " + sum);
+
+            // output the dice rolls to page
+            document.getElementById("die1Result").textContent = "Die 1 is: " + die1;
+            document.getElementById("die2Result").textContent = "Die 1 is: " + die2;
+            document.getElementById("sumResult").textContent = "Die 1 is: " + sum;
+
+            // game logic
+            if (sum == 7 || sum == 11){
+                // if you got a 7 or 11 you lose
+                document.getElementById("gameResult").textContent = "You win";
+            }
+
+        }
+
+        // create a function to generate a die roll - a random number between and 24
+        function rollDie(){
+            // generate a random number between 1 and 24
+            var die = Math.random() * 24; // * is the multiplication symbol
+            // return the random number to the code that called this function
+            return Math.ceil(die); // return a whole number
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Welcome to my dice game. Click the button to play</h1>
+    </header>
+
+    <main>
+        <button onclick="playGame();">Play Game</button>
+        <div id="GameResult">Game Results</div>
+        <div id="die1Result">die 1 Result</div>
+        <div id="die2Result">die 2 Result</div>
+        <div id="sumResult">sum result</div>
+    </main>
+</body>
+</html>
