@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W6 Form Example</title>
+</head>
+<body>
+    <h1>Simple Form</h1>
+
+    <!-- html form allows us to enter information and do something with it (assuming we have server set up) -->
+    <form action="" method="post" onsubmit="return validateform();">
+        <!-- set up a label and textbox to get the user's name -->
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+        <br>
+        <!-- set up a label and textbox to get the user's email -->
+        <label form="emailaddr">Email:</label>
+        <input type="email" id="emailaddr" name="emailaddr">
+        <br>
+        <!-- set up a label and textbox to get the user's age -->
+         <label for="age">Age:</label>
+         <input type="number" id="age" name="age">
+         <br>
+         <br>
+         <input type="submit" value="Validate Date">
+
+    </form>
+
+    <script>
+        function validateform(){
+            // get the name the user entered in the text box and put it in a variable
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("emailaddr").value;
+            var age = document.getElementByid("age").value;
+
+            console.log("name=" + name);
+            console.log("email=" + email);
+            console.log("age=" + age);
+
+            // check to see if the name is empty, removing any spaces at the beginning or end
+            if (name.trim() == ""){
+                alert("Please enter a name.");
+            }
+
+            if (email.trim() == ""){
+                alert("Please enter an email adress.");
+            }
+
+            if (age.trim() == ""){
+                alert("Please enter an age");
+            }
+        }
+    </script>
+</body>
+</html>

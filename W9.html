@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W9 Class Example</title>
+</head>
+<body>
+    <script>
+        // to define a class in JavaScript, use the keyword class
+        // use a capital letter for your class name to help other developers know this is a class
+        // class is like a blueprint when building a house - it is the plan
+        class Animal{
+            // define the constructor (this lets us set up a class fairly easily)
+            constructor(name, species, sound){
+                // take the values passed in to the constructor and we magically assign them to the class properties
+                this.name = name; // name of the animal
+                this.species = species; // species of the animal
+                this.sound = sound; // the sound the animal makes
+                // there are many more properties we could set up
+            }
+
+            // methods are the things the class can do, or how you can change the values of the properties
+            // typically, the properties will each have get/set methods
+            // get - what is the current value of the property
+            // set - change the value of the property
+
+            // this method will reture a string with the animal info
+            describe(){
+                console.log(this.name + " is a " + this.species + " that makes a " + this.sound + " sound.");
+            }
+
+            // this method has the animal make sound
+            makeSound(){
+                console.log(this.name + " says " + this.sound);
+            }
+        }
+
+        // set up a few objects
+        // objects are the houses built from a blueprint
+
+        // this is an object created based on the Animal class
+        var dog = new Animal("Coco", "dog", "woof");
+
+        // create a cat object based on the Animal class
+        var cat1 = new Animal("Sam", "cat", "meow");
+
+        // create a cat object based on the Animal class
+        var cat2 = new Animal("Jeff", "cat", "meow");
+
+        // get the info on the dog
+        dog.describe();
+        cat1.describe();
+        cat2.describe();
+    </script>
+</body>
+</html>

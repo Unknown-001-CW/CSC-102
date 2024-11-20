@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 8 Event Example</title>
+</head>
+<body>
+    <h1>Week 8 Event Example</h1>
+
+    <button id="btn1">Click Me</button>
+
+    <script>
+        // this is the area where we write Javascript code
+        // create a function that runs when we click btn1
+        function handleClick(event){
+            alert("Button (btn1)was Clicked");
+
+            // number1 has a scope limited to the headleClick function
+            var number1 = 1;
+        }
+
+        // create a shortcut/nickname/pointer to the HTML button element
+        var button1 = document.getElementById("btn1")
+        // add an event listener
+        button1.addEventListener("click", handleClick);
+
+        function handleClick2(event){
+            alert("Button (btn1)was Clicked");
+
+            // number1 has a scope limited to the headleClick function
+            var number1 = 1;
+        }
+
+        // normally to call a function, use this syntax:
+        handClick2()
+    </script>
+</body>
+</html>
