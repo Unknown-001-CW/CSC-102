@@ -43,13 +43,23 @@
                 alert("Please enter a name.");
             }
 
+            // make sure an email was entered
             if (email.trim() == ""){
                 alert("Please enter an email adress.");
             }
 
+            // makes sure an age was entered
             if (age.trim() == ""){
                 alert("Please enter an age");
             }
+
+            // make sure age is a number 
+            if (isNaN(age)){ // is Not a Number will be true if, for example, a string was entered
+                alert("Please enter a number for the age");
+            }
+
+            // prevent the form from submitting (this would prevent it from submitting to the server)
+            return false;
         }
     </script>
 </body>
